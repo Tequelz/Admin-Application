@@ -15,14 +15,13 @@ struct AuthKey: Decodable {
     
 }
 
-struct PostView: Decodable {
+struct LessonView: Decodable {
     enum Category: String, Decodable {
         case swift, combine, debugging, xcode
     }
     
-    let title: String
-    let description: String
-    let owner: String
+    let lectureID: Int
+    let lectureName: String
 }
 
 class ManualCodeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -31,30 +30,41 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     var key:String = ""
 
     @IBOutlet weak var label: UILabel!
     
-    var titleArray = [String]()
-    var descriptionArray = [String]()
-    var ownerArray = [String]()
+    var lectureIDArray = [Int]()
+    var lectureNameArray = [String]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.titleArray.count
+        return self.lectureIDArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyCell")! as! MyCellTableViewCell
-        cell.titleLabel.text = self.titleArray[indexPath.row]
-        cell.descriptionLabel.text = self.descriptionArray[indexPath.row]
-        cell.ownerLabel.text = self.ownerArray[indexPath.row]
+        cell.lectureIDLabel.text = String(self.lectureIDArray[indexPath.row])
+        cell.lectureNameLabel.text = self.lectureNameArray[indexPath.row]
         
         return cell
         
     }
     
+    @IBAction func createButton(_ sender: Any) {
+        
+        DispatchQueue.main.async {
+        
+        let story = UIStoryboard(name: "Main",bundle:nil)
+        let controller = story.instantiateViewController(identifier: "LessonAdd") as! LessonAddViewController
+            controller.key = self.key
+        let navigation = UINavigationController(rootViewController: controller)
+        self.view.addSubview(navigation.view)
+        self.addChild(navigation)
+        navigation.didMove(toParent: self)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,15 +73,14 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
 
         print(authKey.key)
-        
-        label.text = authKey.key
+
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         
         
-        let url = URL(string: "https://project-api-sc17gt.herokuapp.com/?format=json")!
+        let url = URL(string: "https://project-api-sc17gt.herokuapp.com/lesson-create/?format=json")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -95,19 +104,14 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
                     for obj in jsonArray{
                         print(obj)
                         if let objDict = obj as? NSDictionary{
-                            if let name = objDict.value(forKey: "title"){
-                                self.titleArray.append(name as! String)
+                            if let name = objDict.value(forKey: "lec_id"){
+                                self.lectureIDArray.append(name as! Int)
                                 print(name)
                             }
-                            if let name = objDict.value(forKey: "description"){
-                                self.descriptionArray.append(name as! String)
+                            if let name = objDict.value(forKey: "lec_name"){
+                                self.lectureNameArray.append(name as! String)
                                 print(name)
                             }
-                            if let name = objDict.value(forKey: "owner"){
-                                self.ownerArray.append(String(name as! Int))
-                                print(name)
-                            }
-                
                             OperationQueue.main.addOperation( {
                                 self.tableView.reloadData()
                             })

@@ -36,8 +36,8 @@ class LoginViewController: UIViewController {
 //        let user = username.text
 //        let mail = email.text
 //        let pass = password.text
-        let user = "sc17gt"
-        let mail = "sc17gt@leeds.ac.uk"
+        let user = "teacher1"
+        let mail = "teacher@teacher.com"
         let pass = "hellothere123"
         let login = Login(username: user, email : mail, password : pass)
         guard let uploadData = try? JSONEncoder().encode(login) else {
