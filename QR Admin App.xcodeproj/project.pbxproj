@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F21C8DD263B3F47001763C2 /* LessonAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F21C8DC263B3F47001763C2 /* LessonAddViewController.swift */; };
+		7F21C8EE263B52C5001763C2 /* QRShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F21C8ED263B52C5001763C2 /* QRShowViewController.swift */; };
 		7F7F19D92632157E00144312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19D82632157E00144312 /* AppDelegate.swift */; };
 		7F7F19DB2632157E00144312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19DA2632157E00144312 /* SceneDelegate.swift */; };
 		7F7F19DD2632157E00144312 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19DC2632157E00144312 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		7F21C8DC263B3F47001763C2 /* LessonAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonAddViewController.swift; sourceTree = "<group>"; };
+		7F21C8ED263B52C5001763C2 /* QRShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRShowViewController.swift; sourceTree = "<group>"; };
 		7F7F19D52632157E00144312 /* QR Admin App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Admin App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7F19D82632157E00144312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F7F19DA2632157E00144312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				7F7F19E62632157F00144312 /* Info.plist */,
 				7F7F1A1326321EFA00144312 /* LoginViewController.swift */,
 				7F7F1A1D2634D97000144312 /* ManualCodeViewController.swift */,
+				7F21C8ED263B52C5001763C2 /* QRShowViewController.swift */,
 			);
 			path = "QR Admin App";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F21C8EE263B52C5001763C2 /* QRShowViewController.swift in Sources */,
 				7F21C8DD263B3F47001763C2 /* LessonAddViewController.swift in Sources */,
 				7F7F1A1426321EFA00144312 /* LoginViewController.swift in Sources */,
 				7F7F19DD2632157E00144312 /* ViewController.swift in Sources */,

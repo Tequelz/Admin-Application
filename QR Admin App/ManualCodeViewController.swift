@@ -32,6 +32,8 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
 
     var key:String = ""
+    
+    var email:String = ""
 
     @IBOutlet weak var label: UILabel!
     
@@ -51,6 +53,29 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.section).")
+        print("Cell cliked value is \(indexPath.row)")
+        
+        
+        DispatchQueue.main.async {
+        
+        let story = UIStoryboard(name: "Main",bundle:nil)
+        let controller = story.instantiateViewController(identifier: "QRShowView") as! QRShowViewController
+            controller.code = String(self.lectureIDArray[indexPath.row])
+            controller.email = self.email
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+            
+            self.present(controller, animated: true, completion: nil)
+//        let navigation = UINavigationController(rootViewController: controller)
+//        self.view.addSubview(navigation.view)
+//        self.addChild(navigation)
+//        navigation.didMove(toParent: self)
+        }
+       
+     }
     
     @IBAction func createButton(_ sender: Any) {
         
@@ -123,6 +148,35 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
         }
             
         task.resume()
+        
+        let url2 = URL(string: "https://project-api-sc17gt.herokuapp.com/rest-auth/user/")!
+        var request2 = URLRequest(url: url2)
+        request2.httpMethod = "GET"
+        request2.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request2.setValue("Token " + authKey.key, forHTTPHeaderField: "Authorization")
+        
+        let task2 = URLSession.shared.dataTask(with: request2) { data, response, error in
+            if let error = error {
+                print ("error: \(error)")
+                return
+            }
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                print ("server error")
+                return
+            }
+            if let mimeType = response.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
+                    if let jsonArray = jsonObj as? NSDictionary{
+                        let email = jsonArray.value(forKey: "email")
+                        print(email)
+                        self.email = email as! String
+                    }
+                }
+            }
+        task2.resume()
 
         // Do any additional setup after loading the view.
     }

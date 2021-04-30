@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -284,9 +285,73 @@
             </objects>
             <point key="canvasLocation" x="2900" y="-895"/>
         </scene>
+        <!--Show View Controller-->
+        <scene sceneID="1V6-Rh-ZvR">
+            <objects>
+                <viewController storyboardIdentifier="QRShowView" id="fF3-VT-tXz" customClass="QRShowViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8xA-34-rxY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Hp-2G-5qN">
+                                <rect key="frame" x="87" y="149" width="240" height="363"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-aH-bjx">
+                                <rect key="frame" x="30" y="64" width="78" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="performButtonAction:" destination="fF3-VT-tXz" eventType="touchUpInside" id="OyU-sp-imf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j61-UG-kqX">
+                                <rect key="frame" x="121" y="527" width="164" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Email to Yourself"/>
+                                <connections>
+                                    <action selector="emailButton:" destination="fF3-VT-tXz" eventType="touchUpInside" id="ZM3-yw-hPR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-bv-dv1">
+                                <rect key="frame" x="102" y="576" width="215" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="View Current Students"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qb6-e0-xrm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j61-UG-kqX" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="121" id="1l3-sa-a7g"/>
+                            <constraint firstItem="7Hp-2G-5qN" firstAttribute="top" secondItem="ZAP-aH-bjx" secondAttribute="bottom" constant="50" id="6cT-qH-7do"/>
+                            <constraint firstItem="7Hp-2G-5qN" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="87" id="A9w-h6-l4Z"/>
+                            <constraint firstItem="ZAP-aH-bjx" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="30" id="ArG-5E-N6K"/>
+                            <constraint firstItem="jfn-bv-dv1" firstAttribute="top" secondItem="j61-UG-kqX" secondAttribute="bottom" constant="10" id="Eey-Xg-zgo"/>
+                            <constraint firstItem="j61-UG-kqX" firstAttribute="centerX" secondItem="7Hp-2G-5qN" secondAttribute="centerX" constant="-4" id="Ghr-N9-CWq"/>
+                            <constraint firstItem="jfn-bv-dv1" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="102" id="R1M-k9-zRa"/>
+                            <constraint firstItem="7Hp-2G-5qN" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="87" id="UbT-Ku-U9h"/>
+                            <constraint firstItem="7Hp-2G-5qN" firstAttribute="centerX" secondItem="8xA-34-rxY" secondAttribute="centerX" id="a1G-29-bLd"/>
+                            <constraint firstItem="qb6-e0-xrm" firstAttribute="trailing" secondItem="7Hp-2G-5qN" secondAttribute="trailing" constant="87" id="dze-qu-mu8"/>
+                            <constraint firstItem="qb6-e0-xrm" firstAttribute="bottom" secondItem="7Hp-2G-5qN" secondAttribute="bottom" constant="350" id="pLv-E6-h0c"/>
+                            <constraint firstItem="ZAP-aH-bjx" firstAttribute="top" secondItem="qb6-e0-xrm" secondAttribute="top" constant="20" id="t4z-vH-DCn"/>
+                            <constraint firstItem="j61-UG-kqX" firstAttribute="top" secondItem="7Hp-2G-5qN" secondAttribute="bottom" constant="15" id="wN2-BI-9A0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAction" destination="ZAP-aH-bjx" id="huf-41-F0K"/>
+                        <outlet property="imgQRCode" destination="7Hp-2G-5qN" id="ccb-Bt-cgd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJW-NY-4Pk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2898.5507246376815" y="-226.33928571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="person.fill.checkmark.rtl" catalog="system" width="128" height="88"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
