@@ -113,7 +113,7 @@ class ModuleAddViewController: UIViewController {
                 DispatchQueue.main.async {
                         
                             let story = UIStoryboard(name: "Main",bundle:nil)
-                            let controller = story.instantiateViewController(identifier: "ManualCodeView") as! ManualCodeViewController
+                            let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
                             controller.key = self.key
                             let navigation = UINavigationController(rootViewController: controller)
                             self.view.addSubview(navigation.view)

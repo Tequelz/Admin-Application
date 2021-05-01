@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     let story = UIStoryboard(name: "Main",bundle:nil)
-                    let controller = story.instantiateViewController(identifier: "ManualCodeView") as! ManualCodeViewController
+                    let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
                         controller.key = dataString
                         controller.modalPresentationStyle = .fullScreen
                         controller.modalTransitionStyle = .crossDissolve

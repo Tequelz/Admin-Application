@@ -61,7 +61,7 @@ class StudentListViewController: UIViewController, UITableViewDataSource, UITabl
         DispatchQueue.main.async {
         
         let story = UIStoryboard(name: "Main",bundle:nil)
-        let controller = story.instantiateViewController(identifier: "ManualCodeViewController") as! ManualCodeViewController
+        let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
             controller.key = self.key
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve

@@ -81,7 +81,7 @@ class LectureAddViewController: UIViewController {
                 DispatchQueue.main.async {
                 
                 let story = UIStoryboard(name: "Main",bundle:nil)
-                let controller = story.instantiateViewController(identifier: "LectureViewController") as! LectureViewController
+                let controller = story.instantiateViewController(identifier: "Lecture") as! LectureViewController
                     controller.lec_id = self.lec_id
                     controller.key = self.key
                     controller.email = self.email

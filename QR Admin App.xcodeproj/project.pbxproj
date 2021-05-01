@@ -18,7 +18,7 @@
 		7F7F19F02632157F00144312 /* Login_PageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19EF2632157F00144312 /* Login_PageTests.swift */; };
 		7F7F19FB2632157F00144312 /* Login_PageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19FA2632157F00144312 /* Login_PageUITests.swift */; };
 		7F7F1A1426321EFA00144312 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F1A1326321EFA00144312 /* LoginViewController.swift */; };
-		7F7F1A1E2634D97000144312 /* ManualCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F1A1D2634D97000144312 /* ManualCodeViewController.swift */; };
+		7F7F1A1E2634D97000144312 /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F1A1D2634D97000144312 /* ModuleViewController.swift */; };
 		7FB8D982263C2BEE0010C740 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8D981263C2BEE0010C740 /* StudentCellTableViewCell.swift */; };
 		7FB8D98F263C2D920010C740 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8D98E263C2D920010C740 /* StudentListViewController.swift */; };
 		7FB8D997263D76C60010C740 /* LectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8D996263D76C60010C740 /* LectureViewController.swift */; };
@@ -63,7 +63,7 @@
 		7F7F19FA2632157F00144312 /* Login_PageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_PageUITests.swift; sourceTree = "<group>"; };
 		7F7F19FC2632157F00144312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7F1A1326321EFA00144312 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		7F7F1A1D2634D97000144312 /* ManualCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCodeViewController.swift; sourceTree = "<group>"; };
+		7F7F1A1D2634D97000144312 /* ModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
 		7FB8D981263C2BEE0010C740 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		7FB8D98E263C2D920010C740 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		7FB8D996263D76C60010C740 /* LectureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				7F7F19E62632157F00144312 /* Info.plist */,
 				7FB8D98E263C2D920010C740 /* StudentListViewController.swift */,
 				7F7F1A1326321EFA00144312 /* LoginViewController.swift */,
-				7F7F1A1D2634D97000144312 /* ManualCodeViewController.swift */,
+				7F7F1A1D2634D97000144312 /* ModuleViewController.swift */,
 				7F21C8ED263B52C5001763C2 /* QRShowViewController.swift */,
 				7FB8D981263C2BEE0010C740 /* StudentCellTableViewCell.swift */,
 				7FB8D9A9263D82040010C740 /* ModuleTableViewCell.swift */,
@@ -302,7 +302,7 @@
 				7FB8D982263C2BEE0010C740 /* StudentCellTableViewCell.swift in Sources */,
 				7FB8D997263D76C60010C740 /* LectureViewController.swift in Sources */,
 				7F7F19DD2632157E00144312 /* ViewController.swift in Sources */,
-				7F7F1A1E2634D97000144312 /* ManualCodeViewController.swift in Sources */,
+				7F7F1A1E2634D97000144312 /* ModuleViewController.swift in Sources */,
 				7F7F19D92632157E00144312 /* AppDelegate.swift in Sources */,
 				7F7F19DB2632157E00144312 /* SceneDelegate.swift in Sources */,
 			);

@@ -16,25 +16,14 @@ class ViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         
         DispatchQueue.main.async {
-//            let parentController = self.presentingViewController
-//            parentController!.dismiss(animated: true){
             let story = UIStoryboard(name: "Main",bundle:nil)
-            let controller = story.instantiateViewController(identifier: "LoginView") as! LoginViewController
+            let controller = story.instantiateViewController(identifier: "Login") as! LoginViewController
                 controller.modalPresentationStyle = .fullScreen
                 controller.modalTransitionStyle = .crossDissolve
-                
                 self.present(controller, animated: true, completion: nil)
-            //}
 
         }
     }
-    
-}
-
-
-
-
-class RequestSender {
     
 }
 

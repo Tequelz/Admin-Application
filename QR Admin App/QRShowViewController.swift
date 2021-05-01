@@ -117,7 +117,7 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
         DispatchQueue.main.async {
         
         let story = UIStoryboard(name: "Main",bundle:nil)
-        let controller = story.instantiateViewController(identifier: "StudentListViewController") as! StudentListViewController
+        let controller = story.instantiateViewController(identifier: "StudentList") as! StudentListViewController
             controller.code = self.code
             controller.key = self.key
             controller.modalPresentationStyle = .fullScreen

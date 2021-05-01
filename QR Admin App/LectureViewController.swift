@@ -55,7 +55,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
             
 
         let story = UIStoryboard(name: "Main",bundle:nil)
-        let controller = story.instantiateViewController(identifier: "QRShowView") as! QRShowViewController
+        let controller = story.instantiateViewController(identifier: "QRShow") as! QRShowViewController
             controller.code = dataString!
             controller.key = self.key
             controller.modalPresentationStyle = .fullScreen
@@ -73,7 +73,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
-            let controller = story.instantiateViewController(identifier: "LectureAddView") as! LectureAddViewController
+            let controller = story.instantiateViewController(identifier: "LectureAdd") as! LectureAddViewController
             controller.key = self.key
             controller.lec_id = self.lec_id
             controller.email = self.email

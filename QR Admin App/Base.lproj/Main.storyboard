@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" customClass="ViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
         <!--Login View Controller-->
         <scene sceneID="zdm-7b-Lir">
             <objects>
-                <viewController storyboardIdentifier="LoginView" id="kkd-S1-pkx" customClass="LoginViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="kkd-S1-pkx" customClass="LoginViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ORu-dQ-OTY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,11 +117,11 @@
             </objects>
             <point key="canvasLocation" x="1114.4927536231885" y="-404.46428571428572"/>
         </scene>
-        <!--Manual Code View Controller-->
+        <!--Module View Controller Scene-->
         <scene sceneID="IyC-hD-l4D">
             <objects>
-                <viewController storyboardIdentifier="ManualCodeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oAc-b0-urw" customClass="ManualCodeViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zwQ-me-2op">
+                <viewController storyboardIdentifier="Module" title="Module View Controller Scene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oAc-b0-urw" customClass="ModuleViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwQ-me-2op" customClass="ModuleViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -216,7 +216,7 @@
         <!--Lecture View Controller-->
         <scene sceneID="wFs-gD-zKH">
             <objects>
-                <viewController storyboardIdentifier="LectureViewController" id="jsO-jt-3Wb" customClass="LectureViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lecture" id="jsO-jt-3Wb" customClass="LectureViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3Q-YO-ZBU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +313,7 @@
         <!--Module Add View Controller-->
         <scene sceneID="SfA-Vc-CII">
             <objects>
-                <viewController storyboardIdentifier="ModuleAddView" id="4GY-0j-doq" customClass="ModuleAddViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModuleAdd" id="4GY-0j-doq" customClass="ModuleAddViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRe-bi-wFL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,10 +369,10 @@
             </objects>
             <point key="canvasLocation" x="1983" y="-1065"/>
         </scene>
-        <!--Show View Controller-->
+        <!--QR Show View Controller Scene-->
         <scene sceneID="1V6-Rh-ZvR">
             <objects>
-                <viewController storyboardIdentifier="QRShowView" id="fF3-VT-tXz" customClass="QRShowViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRShow" title="QR Show View Controller Scene" id="fF3-VT-tXz" customClass="QRShowViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8xA-34-rxY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -425,7 +425,7 @@
         <!--Student List View Controller-->
         <scene sceneID="fs8-Jb-yz4">
             <objects>
-                <viewController storyboardIdentifier="StudentListViewController" id="xrV-Zy-rmD" customClass="StudentListViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentList" id="xrV-Zy-rmD" customClass="StudentListViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81a-Rx-44L" customClass="StudentList">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -520,7 +520,7 @@
         <!--Lecture Add View Controller-->
         <scene sceneID="Mc9-sx-QBD">
             <objects>
-                <viewController storyboardIdentifier="LectureAddView" id="fHi-Ml-Khj" customClass="LectureAddViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LectureAdd" id="fHi-Ml-Khj" customClass="LectureAddViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ry4-19-Mqk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

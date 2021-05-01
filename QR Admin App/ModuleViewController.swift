@@ -24,7 +24,7 @@ struct LessonView: Decodable {
     let lectureName: String
 }
 
-class ManualCodeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ModuleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     
@@ -62,7 +62,7 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
         DispatchQueue.main.async {
         
         let story = UIStoryboard(name: "Main",bundle:nil)
-        let controller = story.instantiateViewController(identifier: "LectureViewController") as! LectureViewController
+        let controller = story.instantiateViewController(identifier: "Lecture") as! LectureViewController
             controller.lec_id = String(self.moduleIDArray[indexPath.row])
             controller.key = self.key
             controller.email = self.email
@@ -79,7 +79,7 @@ class ManualCodeViewController: UIViewController, UITableViewDataSource, UITable
         
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
-            let controller = story.instantiateViewController(identifier: "ModuleAddView") as! ModuleAddViewController
+            let controller = story.instantiateViewController(identifier: "ModuleAdd") as! ModuleAddViewController
             controller.key = self.key
                 controller.modalPresentationStyle = .fullScreen
                 controller.modalTransitionStyle = .crossDissolve
