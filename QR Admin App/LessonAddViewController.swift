@@ -1,26 +1,8 @@
-//
-//  LessonAddViewController.swift
-//  QR Admin App
-//
-//  Created by John Doe on 29/04/2021.
-//
-
 import UIKit
-
-struct Lecture1: Codable{
-    let lec_id:String
-    let lec_name:String
-    let lec_number:String
-    let lec_teacher:Int
-}
-
-
-
 
 class LessonAddViewController: UIViewController {
     
     var key:String = ""
-    
     var userID:Int = 0
 
     override func viewDidLoad() {
@@ -28,9 +10,6 @@ class LessonAddViewController: UIViewController {
         
         let jsonData = key.data(using: .utf8)!
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
-
-        print(authKey.key)
-        
         
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/rest-auth/user/")!
         var request = URLRequest(url: url)
@@ -53,31 +32,19 @@ class LessonAddViewController: UIViewController {
                 let data = data,
                 let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
                 if let jsonArray = jsonObj as? NSDictionary{
-                    let userID = jsonArray.value(forKey: "pk")
-                    print(userID)
-                    self.userID = userID as! Int
-                    print(self.userID)
-                
-            
-            }
+                    let pk = jsonArray.value(forKey: "pk")
+                    self.userID = pk as! Int
+                }
             }
         }
         task.resume()
-
-        // Do any additional setup after loading the view.
     }
     
-    
-    
     @IBOutlet weak var lecName: UITextField!
-    
     @IBOutlet weak var lecID: UITextField!
-    
     @IBOutlet weak var lecNumber: UITextField!
     
-    
     @IBAction func lectureAddButton(_ sender: Any) {
-        
         
         let lectureName = lecName.text
         let lectureId = lecID.text
@@ -88,15 +55,10 @@ class LessonAddViewController: UIViewController {
         let jsonData = key.data(using: .utf8)!
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
 
-        print(authKey.key)
-        
         guard let uploadData = try? JSONEncoder().encode(lecture) else{
             return
         }
-        print(lecture)
-        
-        print(uploadData)
-        
+
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/lesson-create/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -121,16 +83,5 @@ class LessonAddViewController: UIViewController {
             }
         }
         task.resume()
-        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -1,10 +1,3 @@
-//
-//  ModuleTableViewCell.swift
-//  QR Admin App
-//
-//  Created by John Doe on 01/05/2021.
-//
-
 import UIKit
 
 class ModuleTableViewCell: UITableViewCell {

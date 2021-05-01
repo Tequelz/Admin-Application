@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Login Page
-//
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

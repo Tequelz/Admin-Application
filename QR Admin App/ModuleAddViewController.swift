@@ -1,22 +1,9 @@
-//
-//  ModuleAddViewController.swift
-//  QR Admin App
-//
-//  Created by John Doe on 01/05/2021.
-//
-
 import UIKit
-
-struct Module: Codable {
-    let mod_id: String
-    let mod_teacher:Int
-    let mod_name:String
-}
 
 class ModuleAddViewController: UIViewController {
     
     var key:String = ""
-    
+    var email:String = ""
     var userID:Int = 0
 
     override func viewDidLoad() {
@@ -24,8 +11,6 @@ class ModuleAddViewController: UIViewController {
         
         let jsonData = key.data(using: .utf8)!
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
-
-        print(authKey.key)
         
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/rest-auth/user/")!
         var request = URLRequest(url: url)
@@ -49,26 +34,15 @@ class ModuleAddViewController: UIViewController {
                 let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
                 if let jsonArray = jsonObj as? NSDictionary{
                     let userID = jsonArray.value(forKey: "pk")
-                    print(userID)
                     self.userID = userID as! Int
-                    print(self.userID)
-                
-            
-            }
+                }
             }
         }
         task.resume()
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var mod_id: UITextField!
-    
-    
     @IBOutlet weak var mod_name: UITextField!
-    
     
     @IBAction func moduleAddButton(_ sender: Any) {
         
@@ -79,15 +53,10 @@ class ModuleAddViewController: UIViewController {
         
         let jsonData = key.data(using: .utf8)!
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
-
-        print(authKey.key)
         
         guard let uploadData = try? JSONEncoder().encode(module) else{
             return
         }
-        print(module)
-        
-        print(uploadData)
         
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/module-create/")!
         var request = URLRequest(url: url)
@@ -112,30 +81,16 @@ class ModuleAddViewController: UIViewController {
                 print ("got data: \(dataString)")
                 DispatchQueue.main.async {
                         
-                            let story = UIStoryboard(name: "Main",bundle:nil)
-                            let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
-                            controller.key = self.key
-                            let navigation = UINavigationController(rootViewController: controller)
-                            self.view.addSubview(navigation.view)
-                            self.addChild(navigation)
-                            navigation.didMove(toParent: self)
-
+                    let story = UIStoryboard(name: "Main",bundle:nil)
+                    let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
+                        controller.key = self.key
+                        controller.email = self.email
+                        controller.modalPresentationStyle = .fullScreen
+                        controller.modalTransitionStyle = .crossDissolve
+                        self.present(controller, animated: true, completion: nil)
                 }
             }
         }
         task.resume()
-        
-        
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

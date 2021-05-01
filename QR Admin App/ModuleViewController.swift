@@ -1,41 +1,11 @@
-//
-//  ManualCodeViewController.swift
-//  Login Page
-//
-//
-
 import UIKit
 
-struct AuthKey: Decodable {
-    enum Category: String, Decodable {
-        case swift, combine, debugging, xcode
-    }
-
-    let key: String
-    
-}
-
-struct LessonView: Decodable {
-    enum Category: String, Decodable {
-        case swift, combine, debugging, xcode
-    }
-    
-    let lectureID: Int
-    let lectureName: String
-}
-
 class ModuleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-
-    
     
     @IBOutlet weak var tableView: UITableView!
 
     var key:String = ""
-    
     var email:String = ""
-
-    @IBOutlet weak var label: UILabel!
     
     var moduleIDArray = [Int]()
     var moduleNameArray = [String]()
@@ -46,21 +16,17 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyCell")! as! ModuleTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "ModuleCell")! as! ModuleTableViewCell
         cell.moduleIDLabel.text = String(self.moduleIDArray[indexPath.row])
         cell.moduleNameLabel.text = self.moduleNameArray[indexPath.row]
-        
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.section).")
         print("Cell cliked value is \(indexPath.row)")
         
-        
         DispatchQueue.main.async {
-        
         let story = UIStoryboard(name: "Main",bundle:nil)
         let controller = story.instantiateViewController(identifier: "Lecture") as! LectureViewController
             controller.lec_id = String(self.moduleIDArray[indexPath.row])
@@ -68,25 +34,20 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
             controller.email = self.email
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
-            
             self.present(controller, animated: true, completion: nil)
         }
-       
      }
     
     @IBAction func createButton(_ sender: Any) {
         
-        
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
             let controller = story.instantiateViewController(identifier: "ModuleAdd") as! ModuleAddViewController
-            controller.key = self.key
+                controller.key = self.key
+                controller.email = self.email
                 controller.modalPresentationStyle = .fullScreen
                 controller.modalTransitionStyle = .crossDissolve
-                
                 self.present(controller, animated: true, completion: nil)
-            
-
         }
     }
     
@@ -96,14 +57,8 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
         let jsonData = key.data(using: .utf8)!
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
 
-        print(authKey.key)
-
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        
-        
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/module-create/?format=json")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -126,26 +81,21 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
                 let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
                 if let jsonArray = jsonObj as? NSArray{
                     for obj in jsonArray{
-                        print(obj)
                         if let objDict = obj as? NSDictionary{
-                            if let name = objDict.value(forKey: "mod_id"){
-                                self.moduleIDArray.append(name as! Int)
-                                print(name)
+                            if let mod_id = objDict.value(forKey: "mod_id"){
+                                self.moduleIDArray.append(mod_id as! Int)
                             }
-                            if let name = objDict.value(forKey: "mod_name"){
-                                self.moduleNameArray.append(name as! String)
-                                print(name)
+                            if let mod_name = objDict.value(forKey: "mod_name"){
+                                self.moduleNameArray.append(mod_name as! String)
                             }
                             OperationQueue.main.addOperation( {
                                 self.tableView.reloadData()
                             })
-                
                         }
                     }
                 }
             }
         }
-            
         task.resume()
         
         let url2 = URL(string: "https://project-api-sc17gt.herokuapp.com/rest-auth/user/")!
@@ -170,28 +120,11 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
                 let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
                     if let jsonArray = jsonObj as? NSDictionary{
                         let email = jsonArray.value(forKey: "email")
-                        print(email)
                         self.email = email as! String
                     }
                 }
             }
         task2.resume()
-
-        // Do any additional setup after loading the view.
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

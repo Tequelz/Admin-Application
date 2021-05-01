@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  Login Page
-//
-//
-
 import UIKit
 
 @main

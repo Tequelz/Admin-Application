@@ -1,10 +1,3 @@
-//
-//  StudentCellTableViewCell.swift
-//  QR Admin App
-//
-//  Created by John Doe on 30/04/2021.
-//
-
 import UIKit
 
 class StudentCellTableViewCell: UITableViewCell {

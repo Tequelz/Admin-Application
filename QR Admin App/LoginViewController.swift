@@ -1,20 +1,4 @@
-//
-//  LoginViewController.swift
-//  Login Page
-//
-//
-
 import UIKit
-
-struct Login: Codable {
-    let username: String
-    let email: String
-    let password:String
-}
-
-struct Key: Decodable{
-    let key:String
-}
 
 class LoginViewController: UIViewController {
     
@@ -28,18 +12,19 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         buttonLog.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-
-        // Do any additional setup after loading the view.
     }
     
     @objc func tapButton(_ sender: Any) {
 //        let user = username.text
 //        let mail = email.text
 //        let pass = password.text
+        
         let user = "teacher1"
         let mail = "sc17gt@leeds.ac.uk"
         let pass = "hellothere123"
+        
         let login = Login(username: user, email : mail, password : pass)
+        
         guard let uploadData = try? JSONEncoder().encode(login) else {
             return
         }
@@ -65,33 +50,16 @@ class LoginViewController: UIViewController {
                 let dataString = String(data: data, encoding: .utf8) {
                 print ("got data: \(dataString)")
                 
-                
-                
                 DispatchQueue.main.async {
                     let story = UIStoryboard(name: "Main",bundle:nil)
                     let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
                         controller.key = dataString
                         controller.modalPresentationStyle = .fullScreen
                         controller.modalTransitionStyle = .crossDissolve
-                        
                         self.present(controller, animated: true, completion: nil)
-                    
-
                 }
             }
         }
         task.resume()
-
-        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

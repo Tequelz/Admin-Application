@@ -130,7 +130,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="110" id="LUZ-PR-kd1" customClass="ModuleTableViewCell" customModule="QR_Admin_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModuleCell" rowHeight="110" id="LUZ-PR-kd1" customClass="ModuleTableViewCell" customModule="QR_Admin_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LUZ-PR-kd1" id="cRM-zJ-lkJ">
@@ -438,7 +438,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="szW-Ry-KYo" userLabel="tableView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="82" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="110" id="4ia-AQ-yfT" customClass="StudentCellTableViewCell" customModule="QR_Admin_App" customModuleProvider="target">
@@ -448,7 +448,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Student Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-Xg-HxS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-Xg-HxS">
                                                     <rect key="frame" x="11" y="16" width="121" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -460,16 +460,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5E-eu-veI">
-                                                    <rect key="frame" x="147" y="64" width="227" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="227" id="C1u-RK-2DB"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5E-eu-veI">
+                                                    <rect key="frame" x="319.5" y="64" width="54.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5b-Na-kD0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5b-Na-kD0">
                                                     <rect key="frame" x="84" y="63" width="48" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -477,16 +474,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="V5E-eu-veI" firstAttribute="leading" secondItem="EVP-fH-PSn" secondAttribute="leading" id="1KQ-Of-OHU"/>
-                                                <constraint firstItem="V5E-eu-veI" firstAttribute="centerY" secondItem="kgq-Zz-16h" secondAttribute="centerY" id="Bad-qR-fqs"/>
+                                                <constraint firstItem="p5b-Na-kD0" firstAttribute="leading" secondItem="kgq-Zz-16h" secondAttribute="leading" constant="84" id="1H5-M9-FGx"/>
+                                                <constraint firstItem="V5E-eu-veI" firstAttribute="leading" secondItem="EVP-fH-PSn" secondAttribute="leading" constant="172.5" id="1KQ-Of-OHU"/>
+                                                <constraint firstItem="VDN-Xg-HxS" firstAttribute="leading" secondItem="kgq-Zz-16h" secondAttribute="leading" constant="11" id="BWc-AY-UX5"/>
+                                                <constraint firstItem="V5E-eu-veI" firstAttribute="centerY" secondItem="kgq-Zz-16h" secondAttribute="centerY" constant="19.5" id="Bad-qR-fqs"/>
                                                 <constraint firstItem="V5E-eu-veI" firstAttribute="baseline" secondItem="p5b-Na-kD0" secondAttribute="baseline" id="CqP-0m-wZ1"/>
                                                 <constraint firstItem="V5E-eu-veI" firstAttribute="trailing" secondItem="EVP-fH-PSn" secondAttribute="trailing" id="GvH-uS-g8m"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="V5E-eu-veI" secondAttribute="trailing" constant="49" id="OOd-Ts-DUt"/>
-                                                <constraint firstItem="V5E-eu-veI" firstAttribute="top" secondItem="EVP-fH-PSn" secondAttribute="bottom" constant="12" id="PR5-xt-2Qv"/>
-                                                <constraint firstItem="V5E-eu-veI" firstAttribute="leading" secondItem="p5b-Na-kD0" secondAttribute="trailing" constant="15" id="Qvy-bg-swv"/>
-                                                <constraint firstItem="p5b-Na-kD0" firstAttribute="top" secondItem="VDN-Xg-HxS" secondAttribute="bottom" constant="15" id="cOu-to-i1J"/>
-                                                <constraint firstItem="p5b-Na-kD0" firstAttribute="top" secondItem="VDN-Xg-HxS" secondAttribute="bottom" constant="15" id="oED-Np-JQT"/>
-                                                <constraint firstItem="EVP-fH-PSn" firstAttribute="leading" secondItem="VDN-Xg-HxS" secondAttribute="trailing" constant="15" id="oIS-Fb-9gP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="V5E-eu-veI" secondAttribute="trailing" constant="20" id="OOd-Ts-DUt"/>
+                                                <constraint firstItem="V5E-eu-veI" firstAttribute="top" secondItem="EVP-fH-PSn" secondAttribute="bottom" constant="29" id="PR5-xt-2Qv"/>
+                                                <constraint firstItem="V5E-eu-veI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p5b-Na-kD0" secondAttribute="trailing" symbolic="YES" id="Qvy-bg-swv"/>
+                                                <constraint firstItem="p5b-Na-kD0" firstAttribute="top" secondItem="VDN-Xg-HxS" secondAttribute="bottom" constant="25" id="cOu-to-i1J"/>
+                                                <constraint firstItem="p5b-Na-kD0" firstAttribute="top" secondItem="VDN-Xg-HxS" secondAttribute="bottom" constant="25" id="oED-Np-JQT"/>
+                                                <constraint firstItem="EVP-fH-PSn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VDN-Xg-HxS" secondAttribute="trailing" constant="8" symbolic="YES" id="oIS-Fb-9gP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -502,7 +501,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W3l-QJ-RQV" firstAttribute="top" secondItem="iLA-ZJ-o1g" secondAttribute="top" id="5Sp-gV-Qbr"/>
-                            <constraint firstItem="W3l-QJ-RQV" firstAttribute="top" secondItem="szW-Ry-KYo" secondAttribute="top" id="9SD-u1-qbL"/>
+                            <constraint firstItem="W3l-QJ-RQV" firstAttribute="top" secondItem="szW-Ry-KYo" secondAttribute="top" constant="-38" id="9SD-u1-qbL"/>
                             <constraint firstItem="W3l-QJ-RQV" firstAttribute="centerX" secondItem="szW-Ry-KYo" secondAttribute="centerX" id="Mav-L5-Nc2"/>
                             <constraint firstItem="szW-Ry-KYo" firstAttribute="leading" secondItem="81a-Rx-44L" secondAttribute="leadingMargin" constant="-20" id="fZg-ll-N1y"/>
                             <constraint firstAttribute="bottomMargin" secondItem="szW-Ry-KYo" secondAttribute="bottom" constant="-34" id="sXY-1g-XpH"/>
@@ -515,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkd-QR-U1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4630" y="-404"/>
+            <point key="canvasLocation" x="4628.985507246377" y="-404.46428571428572"/>
         </scene>
         <!--Lecture Add View Controller-->
         <scene sceneID="Mc9-sx-QBD">
