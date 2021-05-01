@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 struct Login: Codable {
     
     let username: String
@@ -51,12 +49,7 @@ struct Module: Codable {
     let mod_name:String
     
 }
-struct StudentView: Decodable {
-    
-    let studentName: Int
-    let studentEmail: String
-    
-}
+
 
 class ViewController: UIViewController {
 

@@ -65,4 +65,19 @@ class LectureAddViewController: UIViewController {
         }
         task.resume()
     }
+    
+    
+    @IBAction func backButton(_ sender: Any) {
+        DispatchQueue.main.async {
+        
+        let story = UIStoryboard(name: "Main",bundle:nil)
+        let controller = story.instantiateViewController(identifier: "Lecture") as! LectureViewController
+            controller.lec_id = self.lec_id
+            controller.key = self.key
+            controller.email = self.email
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
 }

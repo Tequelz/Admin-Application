@@ -93,4 +93,20 @@ class ModuleAddViewController: UIViewController {
         }
         task.resume()
     }
+    
+    
+    @IBAction func backButton(_ sender: Any) {
+        DispatchQueue.main.async {
+                
+            let story = UIStoryboard(name: "Main",bundle:nil)
+            let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
+                controller.key = self.key
+                controller.email = self.email
+                controller.modalPresentationStyle = .fullScreen
+                controller.modalTransitionStyle = .crossDissolve
+                self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    
 }

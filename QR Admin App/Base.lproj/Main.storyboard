@@ -355,9 +355,20 @@
                                     <action selector="moduleAddButton:" destination="4GY-0j-doq" eventType="touchUpInside" id="dHA-2K-2m4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSI-3X-5t0">
+                                <rect key="frame" x="40" y="64" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="4GY-0j-doq" eventType="touchUpInside" id="ruN-sh-vtA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qbu-bP-GwH"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="gSI-3X-5t0" firstAttribute="leading" secondItem="Qbu-bP-GwH" secondAttribute="leading" constant="40" id="Z3p-rS-PN2"/>
+                            <constraint firstItem="gSI-3X-5t0" firstAttribute="top" secondItem="HRe-bi-wFL" secondAttribute="topMargin" constant="20" id="y4l-wl-Bhl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fl6-UE-2eT"/>
                     <connections>
@@ -401,6 +412,13 @@
                                     <constraint firstAttribute="width" constant="250" id="v1X-QB-BSa"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMg-q9-J9W">
+                                <rect key="frame" x="40" y="47" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="fF3-VT-tXz" eventType="touchUpInside" id="Xds-S1-Nft"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qb6-e0-xrm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -408,10 +426,12 @@
                             <constraint firstItem="j61-UG-kqX" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="114" id="1l3-sa-a7g"/>
                             <constraint firstItem="7Hp-2G-5qN" firstAttribute="top" secondItem="qb6-e0-xrm" secondAttribute="top" constant="50" id="33g-qk-vGg"/>
                             <constraint firstItem="j61-UG-kqX" firstAttribute="centerX" secondItem="7Hp-2G-5qN" secondAttribute="centerX" constant="-14.5" id="Ghr-N9-CWq"/>
+                            <constraint firstItem="mMg-q9-J9W" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="40" id="QPh-DN-56k"/>
                             <constraint firstItem="jfn-bv-dv1" firstAttribute="leading" secondItem="qb6-e0-xrm" secondAttribute="leading" constant="85" id="R1M-k9-zRa"/>
                             <constraint firstItem="jfn-bv-dv1" firstAttribute="top" secondItem="j61-UG-kqX" secondAttribute="bottom" constant="8" symbolic="YES" id="TOr-4S-Osu"/>
                             <constraint firstItem="qb6-e0-xrm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jfn-bv-dv1" secondAttribute="trailing" symbolic="YES" id="eCK-6x-INL"/>
                             <constraint firstItem="j61-UG-kqX" firstAttribute="top" secondItem="7Hp-2G-5qN" secondAttribute="bottom" constant="85" id="fOr-5i-DPc"/>
+                            <constraint firstItem="mMg-q9-J9W" firstAttribute="top" secondItem="8xA-34-rxY" secondAttribute="topMargin" constant="3" id="opN-E8-Qci"/>
                         </constraints>
                     </view>
                     <connections>
@@ -430,8 +450,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3l-QJ-RQV">
-                                <rect key="frame" x="126.5" y="44" width="161" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3l-QJ-RQV">
+                                <rect key="frame" x="157" y="44" width="131" height="30"/>
                                 <state key="normal" title="GO BACK TO LESSONS"/>
                                 <connections>
                                     <action selector="backModules:" destination="xrV-Zy-rmD" eventType="touchUpInside" id="JuN-JQ-ojH"/>
@@ -561,9 +581,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-49-WnP">
+                                <rect key="frame" x="40" y="64" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="fHi-Ml-Khj" eventType="touchUpInside" id="fMO-EQ-6Eq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CZ6-Oc-v1b"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="AAl-49-WnP" firstAttribute="leading" secondItem="CZ6-Oc-v1b" secondAttribute="leading" constant="40" id="cb3-SZ-2FH"/>
+                            <constraint firstItem="AAl-49-WnP" firstAttribute="top" secondItem="ry4-19-Mqk" secondAttribute="topMargin" constant="20" id="rbh-BY-jsJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IJU-2Q-LG3"/>
                     <connections>
