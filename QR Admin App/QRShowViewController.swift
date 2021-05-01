@@ -13,14 +13,13 @@ var qrcodeImage: CIImage!
 
 class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegate{
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+
     
     var code:String = ""
     
     var email:String = ""
+    
+    var key:String = ""
     
     
     
@@ -30,6 +29,36 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var btnAction: UIButton!
     
     @IBAction func performButtonAction(_ sender: Any) {
+        
+//        if qrcodeImage == nil {
+//            if self.code == "" {
+//                return
+//            }
+//            print(code)
+//            let data = code.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
+//
+//            let filter = CIFilter(name: "CIQRCodeGenerator")
+//
+//            filter?.setValue(data, forKey: "inputMessage")
+//
+//            filter?.setValue("Q", forKey: "inputCorrectionLevel")
+//
+//            qrcodeImage = filter?.outputImage
+//
+//            btnAction.setTitle("Clear", for: .normal)
+//
+//            displayQRCodeImage()
+//        }else{
+//            imgQRCode.image = nil
+//            qrcodeImage = nil
+//            btnAction.setTitle("Generate", for: .normal)
+//        }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
         if qrcodeImage == nil {
             if self.code == "" {
@@ -46,15 +75,13 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
             
             qrcodeImage = filter?.outputImage
             
-            btnAction.setTitle("Clear", for: .normal)
             
             displayQRCodeImage()
         }else{
             imgQRCode.image = nil
             qrcodeImage = nil
-            btnAction.setTitle("Generate", for: .normal)
+           // btnAction.setTitle("Generate", for: .normal)
         }
-        
     }
     
     func displayQRCodeImage() {
@@ -83,6 +110,21 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: {() -> Void in})
+    }
+    
+    
+    @IBAction func studentViewButton(_ sender: Any) {
+        DispatchQueue.main.async {
+        
+        let story = UIStoryboard(name: "Main",bundle:nil)
+        let controller = story.instantiateViewController(identifier: "StudentListViewController") as! StudentListViewController
+            controller.code = self.code
+            controller.key = self.key
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+            
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 }
 

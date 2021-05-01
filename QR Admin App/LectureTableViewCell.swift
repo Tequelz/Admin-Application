@@ -1,18 +1,18 @@
 //
-//  MyCellTableViewCell.swift
-//  Login Page
+//  LectureTableViewCell.swift
+//  QR Admin App
 //
+//  Created by John Doe on 01/05/2021.
 //
 
 import UIKit
 
-class MyCellTableViewCell: UITableViewCell {
+class LectureTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var lectureIDLabel: UILabel!
+    @IBOutlet weak var lectureNumberLabel: UILabel!
     
-    
-    @IBOutlet weak var lectureNameLabel: UILabel!
+    @IBOutlet weak var lectureLengthLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
