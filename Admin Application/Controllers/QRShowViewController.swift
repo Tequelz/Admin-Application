@@ -73,7 +73,7 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     @IBAction func backButton(_ sender: Any) {
         DispatchQueue.main.async {
-        
+        qrcodeImage = nil
         let story = UIStoryboard(name: "Main",bundle:nil)
         let controller = story.instantiateViewController(identifier: "Lecture") as! LectureViewController
             controller.lec_id = self.lec_id

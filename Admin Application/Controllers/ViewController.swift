@@ -25,8 +25,8 @@ struct UserSender: Codable {
 struct Lecture: Codable {
     
     let lec_id:Int
-    let lec_num:Int
-    let lec_len: Int
+    let lec_number:Int
+    let lec_length: Int
     
 }
 struct Lecture1: Codable{

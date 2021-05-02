@@ -298,9 +298,21 @@
                                     <action selector="createLectureButton:" destination="jsO-jt-3Wb" eventType="touchUpInside" id="jbi-vK-4zx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9K-cg-AKL">
+                                <rect key="frame" x="40" y="41" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="fHi-Ml-Khj" eventType="touchUpInside" id="Baj-Wr-yBT"/>
+                                    <action selector="backButton:" destination="jsO-jt-3Wb" eventType="touchUpInside" id="FRI-47-boo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Di1-mt-LQY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I9K-cg-AKL" firstAttribute="leading" secondItem="Di1-mt-LQY" secondAttribute="leading" constant="40" id="lAk-HT-73c"/>
+                            <constraint firstItem="I9K-cg-AKL" firstAttribute="top" secondItem="U3Q-YO-ZBU" secondAttribute="top" constant="41" id="yVF-aR-P9q"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="EfF-b1-Xyj" id="jJb-vN-U8w"/>

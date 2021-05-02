@@ -27,7 +27,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         print("Cell cliked value is \(indexPath.row)")
 
         DispatchQueue.main.async {
-            let lecture = Lecture(lec_id: Int(self.lec_id)!, lec_num: self.lectureNumberArray[indexPath.row], lec_len: self.lectureLengthArray[indexPath.row])
+            let lecture = Lecture(lec_id: Int(self.lec_id)!, lec_number: self.lectureNumberArray[indexPath.row], lec_length: self.lectureLengthArray[indexPath.row])
             guard let uploadData = try? JSONEncoder().encode(lecture) else{
                 return
             }
@@ -37,6 +37,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
             let controller = story.instantiateViewController(identifier: "QRShow") as! QRShowViewController
                 controller.code = dataString!
                 controller.key = self.key
+                controller.lec_id = self.lec_id
                 controller.email = self.email
                 controller.modalPresentationStyle = .fullScreen
                 controller.modalTransitionStyle = .crossDissolve
@@ -111,5 +112,19 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         task.resume()
+    }
+    
+    
+    @IBAction func backButton(_ sender: Any) {
+        DispatchQueue.main.async {
+                
+            let story = UIStoryboard(name: "Main",bundle:nil)
+            let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
+                controller.key = self.key
+                controller.email = self.email
+                controller.modalPresentationStyle = .fullScreen
+                controller.modalTransitionStyle = .crossDissolve
+                self.present(controller, animated: true, completion: nil)
+        }
     }
 }

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F7F19D42632157E00144312"
-               BuildableName = "QR Admin App.app"
-               BlueprintName = "QR Admin App"
-               ReferencedContainer = "container:QR Admin App.xcodeproj">
+               BuildableName = "Admin Application.app"
+               BlueprintName = "Admin Application"
+               ReferencedContainer = "container:Admin Application.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F7F19EA2632157F00144312"
-               BuildableName = "QR Admin AppTests.xctest"
-               BlueprintName = "QR Admin AppTests"
-               ReferencedContainer = "container:QR Admin App.xcodeproj">
+               BuildableName = "Admin ApplicationTests.xctest"
+               BlueprintName = "Admin ApplicationTests"
+               ReferencedContainer = "container:Admin Application.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F7F19F52632157F00144312"
-               BuildableName = "QR Admin AppUITests.xctest"
-               BlueprintName = "QR Admin AppUITests"
-               ReferencedContainer = "container:QR Admin App.xcodeproj">
+               BuildableName = "Admin ApplicationUITests.xctest"
+               BlueprintName = "Admin ApplicationUITests"
+               ReferencedContainer = "container:Admin Application.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7F7F19D42632157E00144312"
-            BuildableName = "QR Admin App.app"
-            BlueprintName = "QR Admin App"
-            ReferencedContainer = "container:QR Admin App.xcodeproj">
+            BuildableName = "Admin Application.app"
+            BlueprintName = "Admin Application"
+            ReferencedContainer = "container:Admin Application.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7F7F19D42632157E00144312"
-            BuildableName = "QR Admin App.app"
-            BlueprintName = "QR Admin App"
-            ReferencedContainer = "container:QR Admin App.xcodeproj">
+            BuildableName = "Admin Application.app"
+            BlueprintName = "Admin Application"
+            ReferencedContainer = "container:Admin Application.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

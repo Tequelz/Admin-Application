@@ -23,7 +23,7 @@ class LectureAddViewController: UIViewController {
         let jsonData = key.data(using: .utf8)!
         let authKey: AuthKey = try! JSONDecoder().decode(AuthKey.self, from: jsonData)
 
-        let lecture = Lecture(lec_id: Int(self.lec_id)!, lec_num: lecNum!, lec_len: lecLen!)
+        let lecture = Lecture(lec_id: Int(self.lec_id)!, lec_number: lecNum!, lec_length: lecLen!)
         
         guard let uploadData = try? JSONEncoder().encode(lecture) else{
             return
