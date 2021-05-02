@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
         <!--Login View Controller-->
         <scene sceneID="zdm-7b-Lir">
             <objects>
-                <viewController storyboardIdentifier="Login" id="kkd-S1-pkx" customClass="LoginViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="kkd-S1-pkx" customClass="LoginViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ORu-dQ-OTY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         <!--Module View Controller Scene-->
         <scene sceneID="IyC-hD-l4D">
             <objects>
-                <viewController storyboardIdentifier="Module" title="Module View Controller Scene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oAc-b0-urw" customClass="ModuleViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Module" title="Module View Controller Scene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oAc-b0-urw" customClass="ModuleViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwQ-me-2op" customClass="ModuleViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +130,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModuleCell" rowHeight="110" id="LUZ-PR-kd1" customClass="ModuleTableViewCell" customModule="QR_Admin_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModuleCell" rowHeight="110" id="LUZ-PR-kd1" customClass="ModuleTableViewCell" customModule="Admin_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LUZ-PR-kd1" id="cRM-zJ-lkJ">
@@ -216,7 +216,7 @@
         <!--Lecture View Controller-->
         <scene sceneID="wFs-gD-zKH">
             <objects>
-                <viewController storyboardIdentifier="Lecture" id="jsO-jt-3Wb" customClass="LectureViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lecture" id="jsO-jt-3Wb" customClass="LectureViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3Q-YO-ZBU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LectureCell" rowHeight="110" id="Gyl-9d-TCt" userLabel="LectureCell" customClass="LectureTableViewCell" customModule="QR_Admin_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LectureCell" rowHeight="110" id="Gyl-9d-TCt" userLabel="LectureCell" customClass="LectureTableViewCell" customModule="Admin_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gyl-9d-TCt" id="5Wf-W5-Txq">
@@ -322,10 +322,88 @@
             </objects>
             <point key="canvasLocation" x="2932" y="-404"/>
         </scene>
+        <!--Tech Choice View Controller-->
+        <scene sceneID="lXb-Bq-HaT">
+            <objects>
+                <viewController storyboardIdentifier="TechChoice" id="5Br-9z-nxd" customClass="TechChoiceViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYx-l3-EbK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="BTLoad" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuP-vs-wmP">
+                                <rect key="frame" x="150" y="144" width="125" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="BT LOAD"/>
+                                <connections>
+                                    <action selector="btLoadButton:" destination="5Br-9z-nxd" eventType="touchUpInside" id="YPH-XM-JZD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="QRLoad" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-LJ-XP8">
+                                <rect key="frame" x="150" y="293" width="129" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="QR LOAD"/>
+                                <connections>
+                                    <action selector="qrLoadButton:" destination="5Br-9z-nxd" eventType="touchUpInside" id="G5u-Xo-LuP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-uE-SxW">
+                                <rect key="frame" x="50" y="54" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="fF3-VT-tXz" eventType="touchUpInside" id="LUa-JI-UpC"/>
+                                    <action selector="backButton:" destination="5Br-9z-nxd" eventType="touchUpInside" id="quP-Sy-mMB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m0Z-xj-csB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SuP-vs-wmP" firstAttribute="top" secondItem="gYx-l3-EbK" secondAttribute="topMargin" constant="100" id="B15-dm-vLd"/>
+                            <constraint firstItem="SuP-vs-wmP" firstAttribute="leading" secondItem="gYx-l3-EbK" secondAttribute="leadingMargin" constant="130" id="Udr-Nu-e6M"/>
+                            <constraint firstItem="a8d-LJ-XP8" firstAttribute="leading" secondItem="gYx-l3-EbK" secondAttribute="leadingMargin" constant="130" id="Xtn-Ej-Bh0"/>
+                            <constraint firstItem="n3H-uE-SxW" firstAttribute="leading" secondItem="gYx-l3-EbK" secondAttribute="leadingMargin" constant="30" id="gY1-HM-5NA"/>
+                            <constraint firstItem="n3H-uE-SxW" firstAttribute="top" secondItem="gYx-l3-EbK" secondAttribute="topMargin" constant="10" id="ine-Sh-j6b"/>
+                            <constraint firstItem="a8d-LJ-XP8" firstAttribute="top" secondItem="SuP-vs-wmP" secondAttribute="bottom" constant="100" id="qNE-cy-T8s"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9v-F8-ZoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3937.68115942029" y="-404.46428571428572"/>
+        </scene>
+        <!--Show View Controller-->
+        <scene sceneID="8pp-SS-Uue">
+            <objects>
+                <viewController storyboardIdentifier="BTShow" id="W07-HE-NOc" customClass="BTShowViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ybb-mI-O8V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-3M-9fZ">
+                                <rect key="frame" x="50" y="54" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="fF3-VT-tXz" eventType="touchUpInside" id="JRS-SD-Rtk"/>
+                                    <action selector="backButton:" destination="W07-HE-NOc" eventType="touchUpInside" id="OVH-nM-RvU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uDd-Oz-X4a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VYv-3M-9fZ" firstAttribute="leading" secondItem="Ybb-mI-O8V" secondAttribute="leadingMargin" constant="30" id="00p-Kq-Sis"/>
+                            <constraint firstItem="VYv-3M-9fZ" firstAttribute="top" secondItem="Ybb-mI-O8V" secondAttribute="topMargin" constant="10" id="gRj-PD-inD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oQ-PA-nMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4938" y="-143"/>
+        </scene>
         <!--Module Add View Controller-->
         <scene sceneID="SfA-Vc-CII">
             <objects>
-                <viewController storyboardIdentifier="ModuleAdd" id="4GY-0j-doq" customClass="ModuleAddViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModuleAdd" id="4GY-0j-doq" customClass="ModuleAddViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRe-bi-wFL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -395,7 +473,7 @@
         <!--QR Show View Controller Scene-->
         <scene sceneID="1V6-Rh-ZvR">
             <objects>
-                <viewController storyboardIdentifier="QRShow" title="QR Show View Controller Scene" id="fF3-VT-tXz" customClass="QRShowViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRShow" title="QR Show View Controller Scene" id="fF3-VT-tXz" customClass="QRShowViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8xA-34-rxY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,12 +530,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJW-NY-4Pk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3779.7101449275365" y="-404.46428571428572"/>
+            <point key="canvasLocation" x="4938" y="-925"/>
         </scene>
         <!--Student List View Controller-->
         <scene sceneID="fs8-Jb-yz4">
             <objects>
-                <viewController storyboardIdentifier="StudentList" id="xrV-Zy-rmD" customClass="StudentListViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentList" id="xrV-Zy-rmD" customClass="StudentListViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81a-Rx-44L" customClass="StudentList">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -473,7 +551,7 @@
                                 <rect key="frame" x="0.0" y="82" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="110" id="4ia-AQ-yfT" customClass="StudentCellTableViewCell" customModule="QR_Admin_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="110" id="4ia-AQ-yfT" customClass="StudentCellTableViewCell" customModule="Admin_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ia-AQ-yfT" id="kgq-Zz-16h">
@@ -546,12 +624,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkd-QR-U1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4628.985507246377" y="-404.46428571428572"/>
+            <point key="canvasLocation" x="5828" y="-404"/>
         </scene>
         <!--Lecture Add View Controller-->
         <scene sceneID="Mc9-sx-QBD">
             <objects>
-                <viewController storyboardIdentifier="LectureAdd" id="fHi-Ml-Khj" customClass="LectureAddViewController" customModule="QR_Admin_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LectureAdd" id="fHi-Ml-Khj" customClass="LectureAddViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ry4-19-Mqk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

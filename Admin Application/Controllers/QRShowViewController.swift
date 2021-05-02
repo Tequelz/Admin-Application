@@ -72,16 +72,17 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     
     @IBAction func backButton(_ sender: Any) {
-        DispatchQueue.main.async {
         qrcodeImage = nil
-        let story = UIStoryboard(name: "Main",bundle:nil)
-        let controller = story.instantiateViewController(identifier: "Lecture") as! LectureViewController
-            controller.lec_id = self.lec_id
-            controller.key = self.key
-            controller.email = self.email
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .crossDissolve
-            self.present(controller, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let story = UIStoryboard(name: "Main",bundle:nil)
+            let controller = story.instantiateViewController(identifier: "TechChoice") as! TechChoiceViewController
+                controller.code = self.code
+                controller.key = self.key
+                controller.lec_id = self.lec_id
+                controller.email = self.email
+                controller.modalPresentationStyle = .fullScreen
+                controller.modalTransitionStyle = .crossDissolve
+                self.present(controller, animated: true, completion: nil)
         }
     }
 }

@@ -34,7 +34,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
             let dataString = String(data: uploadData, encoding: .utf8)
         
             let story = UIStoryboard(name: "Main",bundle:nil)
-            let controller = story.instantiateViewController(identifier: "QRShow") as! QRShowViewController
+            let controller = story.instantiateViewController(identifier: "TechChoice") as! TechChoiceViewController
                 controller.code = dataString!
                 controller.key = self.key
                 controller.lec_id = self.lec_id
