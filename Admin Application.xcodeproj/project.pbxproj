@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F21C8DD263B3F47001763C2 /* LessonAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F21C8DC263B3F47001763C2 /* LessonAddViewController.swift */; };
 		7F21C8EE263B52C5001763C2 /* QRShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F21C8ED263B52C5001763C2 /* QRShowViewController.swift */; };
 		7F31498C263EE51C00CBFF21 /* TechChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F31498B263EE51C00CBFF21 /* TechChoiceViewController.swift */; };
-		7F314991263EE6E100CBFF21 /* BTShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F314990263EE6E100CBFF21 /* BTShowViewController.swift */; };
 		7F7F19D92632157E00144312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19D82632157E00144312 /* AppDelegate.swift */; };
 		7F7F19DB2632157E00144312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19DA2632157E00144312 /* SceneDelegate.swift */; };
 		7F7F19DD2632157E00144312 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19DC2632157E00144312 /* ViewController.swift */; };
@@ -21,6 +19,7 @@
 		7F7F19FB2632157F00144312 /* Login_PageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F19FA2632157F00144312 /* Login_PageUITests.swift */; };
 		7F7F1A1426321EFA00144312 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F1A1326321EFA00144312 /* LoginViewController.swift */; };
 		7F7F1A1E2634D97000144312 /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F1A1D2634D97000144312 /* ModuleViewController.swift */; };
+		7F9FC021263EF862002979A1 /* TransmitBTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9FC020263EF862002979A1 /* TransmitBTViewController.swift */; };
 		7FB8D982263C2BEE0010C740 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8D981263C2BEE0010C740 /* StudentCellTableViewCell.swift */; };
 		7FB8D98F263C2D920010C740 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8D98E263C2D920010C740 /* StudentListViewController.swift */; };
 		7FB8D997263D76C60010C740 /* LectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8D996263D76C60010C740 /* LectureViewController.swift */; };
@@ -48,10 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F21C8DC263B3F47001763C2 /* LessonAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonAddViewController.swift; sourceTree = "<group>"; };
 		7F21C8ED263B52C5001763C2 /* QRShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRShowViewController.swift; sourceTree = "<group>"; };
 		7F31498B263EE51C00CBFF21 /* TechChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechChoiceViewController.swift; sourceTree = "<group>"; };
-		7F314990263EE6E100CBFF21 /* BTShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTShowViewController.swift; sourceTree = "<group>"; };
 		7F7F19D52632157E00144312 /* Admin Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Admin Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7F19D82632157E00144312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F7F19DA2632157E00144312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +65,7 @@
 		7F7F19FC2632157F00144312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7F1A1326321EFA00144312 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7F7F1A1D2634D97000144312 /* ModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
+		7F9FC020263EF862002979A1 /* TransmitBTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitBTViewController.swift; sourceTree = "<group>"; };
 		7FB8D981263C2BEE0010C740 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		7FB8D98E263C2D920010C740 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		7FB8D996263D76C60010C740 /* LectureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureViewController.swift; sourceTree = "<group>"; };
@@ -112,10 +110,9 @@
 				7F7F1A1326321EFA00144312 /* LoginViewController.swift */,
 				7FB8D98E263C2D920010C740 /* StudentListViewController.swift */,
 				7F7F19DC2632157E00144312 /* ViewController.swift */,
-				7F21C8DC263B3F47001763C2 /* LessonAddViewController.swift */,
 				7FB8D996263D76C60010C740 /* LectureViewController.swift */,
 				7F31498B263EE51C00CBFF21 /* TechChoiceViewController.swift */,
-				7F314990263EE6E100CBFF21 /* BTShowViewController.swift */,
+				7F9FC020263EF862002979A1 /* TransmitBTViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -314,18 +311,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9FC021263EF862002979A1 /* TransmitBTViewController.swift in Sources */,
 				7FB8D98F263C2D920010C740 /* StudentListViewController.swift in Sources */,
 				7FB8D9AA263D82040010C740 /* ModuleTableViewCell.swift in Sources */,
 				7F21C8EE263B52C5001763C2 /* QRShowViewController.swift in Sources */,
 				7FB8D9AF263D86CF0010C740 /* ModuleAddViewController.swift in Sources */,
-				7F21C8DD263B3F47001763C2 /* LessonAddViewController.swift in Sources */,
 				7F7F1A1426321EFA00144312 /* LoginViewController.swift in Sources */,
 				7FB8D9A2263D7CF00010C740 /* LectureTableViewCell.swift in Sources */,
 				7FB8D9B4263D90B30010C740 /* LectureAddViewController.swift in Sources */,
 				7FB8D982263C2BEE0010C740 /* StudentCellTableViewCell.swift in Sources */,
 				7F31498C263EE51C00CBFF21 /* TechChoiceViewController.swift in Sources */,
 				7FB8D997263D76C60010C740 /* LectureViewController.swift in Sources */,
-				7F314991263EE6E100CBFF21 /* BTShowViewController.swift in Sources */,
 				7F7F19DD2632157E00144312 /* ViewController.swift in Sources */,
 				7F7F1A1E2634D97000144312 /* ModuleViewController.swift in Sources */,
 				7F7F19D92632157E00144312 /* AppDelegate.swift in Sources */,

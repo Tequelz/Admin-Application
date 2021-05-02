@@ -25,7 +25,7 @@ class TechChoiceViewController: UIViewController {
         
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
-            let controller = story.instantiateViewController(identifier: "BTShow") as! BTShowViewController
+            let controller = story.instantiateViewController(identifier: "TransmitBT") as! TransmitBTViewController
                 controller.code = self.code
                 controller.key = self.key
                 controller.lec_id = self.lec_id

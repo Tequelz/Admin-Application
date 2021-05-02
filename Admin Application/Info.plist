@@ -62,5 +62,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Can use Bluetooth</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to scan for iBeacons</string>
 </dict>
 </plist>
