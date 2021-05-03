@@ -17,7 +17,7 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         @IBOutlet weak var identityLabel: UILabel!
     
     
-    
+    var myUUID = "E06F95E4-FCFC-42C6-B4F8-F6BAE87EA1A0"
     var code:String = ""
     var email:String = ""
     var key:String = ""
@@ -29,6 +29,15 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
     var beaconRegion : CLBeaconRegion!
     var beaconPeripheralData : NSDictionary!
     var peripheralManager : CBPeripheralManager!
+    
+    
+    func success(notif: String) {
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title:notif, message: nil,preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            self.present(ac,animated: true)
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -42,6 +51,7 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         @IBAction func transmitButtonTapped(_ sender: UIButton) {
             beaconPeripheralData = beaconRegion .peripheralData(withMeasuredPower: nil)
                 peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
+            self.success(notif: "Managed to begin transmission with ID: \(self.email) and UUID: \(self.myUUID)")
         }
      
         override func didReceiveMemoryWarning() {
@@ -79,22 +89,22 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         let min = UInt16(self.lecture_number+String(self.lecture_length))
         
         
-        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "E06F95E4-FCFC-42C6-B4F8-F6BAE87EA1A0")!,
+        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: self.myUUID)!,
                                            major: mjr!,
                                            minor: min!,
                                            identifier: self.email)
     }
     
     func setLabels() {
-        uuidLabel.text = beaconRegion.proximityUUID.uuidString
-        majorLabel.text = beaconRegion.major?.stringValue
-        minorLabel.text = beaconRegion.minor?.stringValue
+        uuidLabel.text = beaconRegion.uuid.uuidString
         identityLabel.text = beaconRegion.identifier
     }
     
 
     @IBAction func backButton(_ sender: Any) {
-        peripheralManager.stopAdvertising()
+        if peripheralManager != nil {
+            peripheralManager.stopAdvertising()
+        }
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
             let controller = story.instantiateViewController(identifier: "TechChoice") as! TechChoiceViewController
@@ -108,9 +118,11 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         }
     }
     
-    @IBAction func viewCurrentStudentsButton(_ sender: Any) {
+    @IBAction func transmitViewStudentsButton(_ sender: Any) {
+        if peripheralManager != nil {
+            peripheralManager.stopAdvertising()
+        }
         DispatchQueue.main.async {
-            qrcodeImage = nil
         let story = UIStoryboard(name: "Main",bundle:nil)
         let controller = story.instantiateViewController(identifier: "StudentList") as! StudentListViewController
             controller.code = self.code
@@ -123,7 +135,7 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
     }
     
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
