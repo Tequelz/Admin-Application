@@ -10,6 +10,14 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
     var moduleIDArray = [Int]()
     var moduleNameArray = [String]()
     
+    func failed(error: String) {
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            self.present(ac,animated: true)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.moduleIDArray.count
@@ -68,11 +76,13 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print ("error: \(error)")
+                self.failed(error: "Error in app side (When creating module)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
                 print ("server error")
+                self.failed(error: "Error in server side (When creating module)")
                 return
             }
             if let mimeType = response.mimeType,
@@ -107,11 +117,13 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
         let task2 = URLSession.shared.dataTask(with: request2) { data, response, error in
             if let error = error {
                 print ("error: \(error)")
+                self.failed(error: "Error in app side (When getting user details)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
                 print ("server error")
+                self.failed(error: "Error in server side (When getting user details)")
                 return
             }
             if let mimeType = response.mimeType,

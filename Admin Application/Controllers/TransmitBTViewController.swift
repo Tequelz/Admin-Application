@@ -82,7 +82,7 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "E06F95E4-FCFC-42C6-B4F8-F6BAE87EA1A0")!,
                                            major: mjr!,
                                            minor: min!,
-                                           identifier: "teacher1")
+                                           identifier: self.email)
     }
     
     func setLabels() {
@@ -107,6 +107,21 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
                 self.present(controller, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func viewCurrentStudentsButton(_ sender: Any) {
+        DispatchQueue.main.async {
+            qrcodeImage = nil
+        let story = UIStoryboard(name: "Main",bundle:nil)
+        let controller = story.instantiateViewController(identifier: "StudentList") as! StudentListViewController
+            controller.code = self.code
+            controller.key = self.key
+            controller.email = self.email
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

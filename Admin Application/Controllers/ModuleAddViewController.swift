@@ -5,6 +5,14 @@ class ModuleAddViewController: UIViewController {
     var key:String = ""
     var email:String = ""
     var userID:Int = 0
+    
+    func failed(error: String) {
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            self.present(ac,animated: true)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +29,13 @@ class ModuleAddViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print ("error: \(error)")
+                self.failed(error: "Error in app side (When getting user details)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
                 print ("server error")
+                self.failed(error: "Error in server side (When getting user details)")
                 return
             }
             if let mimeType = response.mimeType,
@@ -67,11 +77,13 @@ class ModuleAddViewController: UIViewController {
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
             if let error = error {
                 print ("error: \(error)")
+                self.failed(error: "Error in app side (When trying to create module)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
                 print ("server error")
+                self.failed(error: "Error in server side (When trying to create module)")
                 return
             }
             if let mimeType = response.mimeType,

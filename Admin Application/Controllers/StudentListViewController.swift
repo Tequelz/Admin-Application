@@ -37,7 +37,20 @@ class StudentListViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-
+    @IBAction func refreshButton(_ sender: Any) {
+        DispatchQueue.main.async {
+            qrcodeImage = nil
+        let story = UIStoryboard(name: "Main",bundle:nil)
+        let controller = story.instantiateViewController(identifier: "StudentList") as! StudentListViewController
+            controller.code = self.code
+            controller.key = self.key
+            controller.email = self.email
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
