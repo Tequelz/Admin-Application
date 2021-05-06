@@ -51,11 +51,8 @@ struct Module: Codable {
 }
 
 
-class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+class ViewController: UIViewController {
 
     @IBAction func loginButton(_ sender: Any) {
         
@@ -67,6 +64,5 @@ class ViewController: UIViewController {
                 self.present(controller, animated: true, completion: nil)
         }
     }
-    
 }
 

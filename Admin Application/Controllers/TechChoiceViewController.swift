@@ -14,13 +14,6 @@ class TechChoiceViewController: UIViewController {
     var lec_id:String = ""
     var email:String = ""
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     @IBAction func btLoadButton(_ sender: Any) {
         
         DispatchQueue.main.async {
