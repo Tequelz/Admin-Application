@@ -759,6 +759,38 @@
             </objects>
             <point key="canvasLocation" x="4934.7826086956529" y="-86.383928571428569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GjV-dj-Iwa">
+            <objects>
+                <viewController storyboardIdentifier="QRBT" id="sgo-wA-6Uq" customClass="QRBTViewController" customModule="Admin_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lfS-S4-5ca">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nV0-fA-gUo">
+                                <rect key="frame" x="82" y="73" width="250" height="250"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="NYH-fl-kIs"/>
+                                    <constraint firstAttribute="height" constant="250" id="Rnu-s2-BUk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LBK-M8-izh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nV0-fA-gUo" firstAttribute="centerX" secondItem="lfS-S4-5ca" secondAttribute="centerX" id="POL-zl-KI1"/>
+                            <constraint firstItem="nV0-fA-gUo" firstAttribute="top" secondItem="LBK-M8-izh" secondAttribute="top" constant="29" id="gLW-fL-16e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgQRCode" destination="nV0-fA-gUo" id="2Fn-bZ-F24"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmC-BI-9ZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2438" y="268"/>
+        </scene>
     </scenes>
     <resources>
         <image name="person.fill.checkmark.rtl" catalog="system" width="128" height="88"/>

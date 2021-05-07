@@ -1,10 +1,3 @@
-//
-//  TransmitBTViewController.swift
-//  Admin Application
-//
-//  Created by John Doe on 02/05/2021.
-//
-
 import UIKit
 import CoreLocation
 import CoreBluetooth
@@ -12,9 +5,9 @@ import CoreBluetooth
 class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
     
     @IBOutlet weak var uuidLabel: UILabel!
-        @IBOutlet weak var majorLabel: UILabel!
-        @IBOutlet weak var minorLabel: UILabel!
-        @IBOutlet weak var identityLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    @IBOutlet weak var minorLabel: UILabel!
+    @IBOutlet weak var identityLabel: UILabel!
     
     
     var myUUID = "E06F95E4-FCFC-42C6-B4F8-F6BAE87EA1A0"
@@ -24,40 +17,18 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
     var lec_id:String = ""
     var lecture_number:String = ""
     var lecture_length:String = ""
-    
-
     var beaconRegion : CLBeaconRegion!
     var beaconPeripheralData : NSDictionary!
     var peripheralManager : CBPeripheralManager!
     
     
-    func success(notif: String) {
+    func failed(error: String) {
         DispatchQueue.main.async {
-            let ac = UIAlertController(title:notif, message: nil,preferredStyle: .alert)
+            let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
             self.present(ac,animated: true)
         }
     }
-    
-
-    override func viewDidLoad() {
-            super.viewDidLoad()
-
-        initBeaconRegion()
-        setLabels()
-            // Do any additional setup after loading the view.
-        }
-     
-        @IBAction func transmitButtonTapped(_ sender: UIButton) {
-            beaconPeripheralData = beaconRegion .peripheralData(withMeasuredPower: nil)
-                peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
-            self.success(notif: "Managed to begin transmission with ID: \(self.email) and UUID: \(self.myUUID)")
-        }
-     
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
-        }
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         if (peripheral.state == .poweredOn) {
@@ -99,7 +70,25 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         uuidLabel.text = beaconRegion.uuid.uuidString
         identityLabel.text = beaconRegion.identifier
     }
-    
+
+    override func viewDidLoad() {
+            super.viewDidLoad()
+
+        self.initBeaconRegion()
+        self.setLabels()
+            // Do any additional setup after loading the view.
+        }
+     
+    @IBAction func transmitButtonTapped(_ sender: UIButton) {
+        beaconPeripheralData = beaconRegion .peripheralData(withMeasuredPower: nil)
+            peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
+        self.failed(error: "Managed to begin transmission with ID: \(self.email) and UUID: \(self.myUUID)")
+    }
+     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     @IBAction func backButton(_ sender: Any) {
         if peripheralManager != nil {
@@ -134,14 +123,4 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
         }
     }
     
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -1,34 +1,30 @@
 import UIKit
 import MessageUI
 
-var qrcodeImage: CIImage!
-
 class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegate{
+    
+    @IBOutlet weak var imgQRCode: UIImageView!
     
     var code:String = ""
     var email:String = ""
     var key:String = ""
     var lec_id:String = ""
-
+    var qrcodeImage: CIImage!
     
-    @IBOutlet weak var imgQRCode: UIImageView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        if qrcodeImage == nil {
+    func qrCheck() {
+        if self.qrcodeImage == nil {
             if self.code == "" {
                 return
             }
-            let data = code.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
+            let data = self.code.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
             let filter = CIFilter(name: "CIQRCodeGenerator")
             filter?.setValue(data, forKey: "inputMessage")
             filter?.setValue("Q", forKey: "inputCorrectionLevel")
-            qrcodeImage = filter?.outputImage
+            self.qrcodeImage = filter?.outputImage
             displayQRCodeImage()
         }else{
-            imgQRCode.image = nil
-            qrcodeImage = nil
+            self.imgQRCode.image = nil
+            self.qrcodeImage = nil
         }
     }
     
@@ -37,6 +33,16 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
         let scaleY = imgQRCode.frame.size.height / qrcodeImage.extent.size.height
         let transformedImage = qrcodeImage.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
         imgQRCode.image = UIImage(ciImage: transformedImage)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: {() -> Void in})
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        qrCheck()
     }
     
     @IBAction func emailButton(_ sender: Any) {
@@ -52,13 +58,11 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
         }
     }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: {() -> Void in})
-    }
+    
     
     @IBAction func studentViewButton(_ sender: Any) {
         DispatchQueue.main.async {
-            qrcodeImage = nil
+            self.qrcodeImage = nil
         let story = UIStoryboard(name: "Main",bundle:nil)
         let controller = story.instantiateViewController(identifier: "StudentList") as! StudentListViewController
             controller.code = self.code

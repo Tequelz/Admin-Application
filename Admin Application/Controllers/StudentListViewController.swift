@@ -203,7 +203,6 @@ class StudentListViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBAction func refreshButton(_ sender: Any) {
         DispatchQueue.main.async {
-            qrcodeImage = nil
         let story = UIStoryboard(name: "Main",bundle:nil)
         let controller = story.instantiateViewController(identifier: "StudentList") as! StudentListViewController
             controller.code = self.code

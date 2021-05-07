@@ -29,14 +29,7 @@ struct Lecture: Codable {
     let lec_length: Int
     
 }
-struct Lecture1: Codable{
-    
-    let lec_id:String
-    let lec_name:String
-    let lec_number:String
-    let lec_teacher:Int
-    
-}
+
 struct LectureID: Codable {
     
     let lecID:String
