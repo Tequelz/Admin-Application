@@ -1,20 +1,13 @@
-//
-//  TechChoiceViewController.swift
-//  Admin Application
-//
-//  Created by John Doe on 02/05/2021.
-//
-
 import UIKit
 
-class TechChoiceViewController: UIViewController {
+class TechChoiceViewController: UIViewController { //Class that is used for the user to choose a technology for the tracking of attendance
     
     var code:String = ""
     var key:String = ""
     var lec_id:String = ""
-    var email:String = ""
+    var email:String = "" //These four variables are used to take in values from the previous controller
     
-    @IBAction func btLoadButton(_ sender: Any) {
+    @IBAction func btLoadButton(_ sender: Any) { //This function handles the Bluetooth button being clicked with the data being passed along into the TransmitBT view
         
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
@@ -30,7 +23,7 @@ class TechChoiceViewController: UIViewController {
     }
     
     
-    @IBAction func qrLoadButton(_ sender: Any) {
+    @IBAction func qrLoadButton(_ sender: Any) {//This function handles the QR button being clicked with the data being passed along into the QRShow view
         
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)

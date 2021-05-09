@@ -1,16 +1,16 @@
 import UIKit
 
-class LectureViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LectureViewController: UIViewController, UITableViewDataSource, UITableViewDelegate { //This class shows all the lectures that are associated to a module for the user, allowing them to click on a lecture and generate the QR or Bluetooth functionality
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! //Connect the tableView on the storyboard to the class
     
     var key: String = ""
     var lec_id: String = ""
-    var email:String = ""
-    var lectureNumberArray = [Int]()
+    var email:String = "" //Used for passing in data from previous controller
+    var lectureNumberArray = [Int]() //Create two arrays for storing the lectures details
     var lectureLengthArray = [Int]()
     
-    func failed(error: String) {
+    func failed(error: String) { // Function that creates a pop up for the user if theres an error
         DispatchQueue.main.async {
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -18,7 +18,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    func tableAdd(data: Data){
+    func tableAdd(data: Data){ //This function takes some input data converting it into an JSON object, then to an Array and then each index becomes a dictionary that can be broken up and then appended to the associated array, with the tableView being reloaded at the end
         if let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
             if let jsonArray = jsonObj as? NSArray{
                 for obj in jsonArray{
@@ -38,7 +38,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    func getLectures(uploadData: Data){
+    func getLectures(uploadData: Data){ //This function is used to obtain the data containing all the lectures, here the user sends a request with some upload data and in return they recieve the data that is then added to the table using the tableAdd function
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/lecture-view/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -64,18 +64,18 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         task.resume()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { //Function that returns the number of rows within the tableView
         return self.lectureNumberArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //Function that allows for the elements within the cell to be assigned values with the new cell being returned so it is added to the table
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "LectureCell")! as! LectureTableViewCell
         cell.lectureNumberLabel.text = String(self.lectureNumberArray[indexPath.row])
         cell.lectureLengthLabel.text = String(self.lectureLengthArray[indexPath.row])
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //Function that determines what happens if a row is to be clicked, if clicked the lecture number and length are obtained from the arrays and then used to create a Lecture instance that is encoded and then passed into the next controller as a String. Once made the code, and a few other variables are passed along to the TechChoice view that allows the user to choose a technology for tracking attendance
         DispatchQueue.main.async {
             let lecture = Lecture(lec_id: Int(self.lec_id)!, lec_number: self.lectureNumberArray[indexPath.row], lec_length: self.lectureLengthArray[indexPath.row])
             guard let uploadData = try? JSONEncoder().encode(lecture) else{
@@ -95,7 +95,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         }
      }
     
-    @IBAction func createLectureButton(_ sender: Any) {
+    @IBAction func createLectureButton(_ sender: Any) { //This button allows the user to open the LectureAdd view where theyre able to add lectures for the tableView
         
         DispatchQueue.main.async {
             let story = UIStoryboard(name: "Main",bundle:nil)
@@ -109,7 +109,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { //Upon calling the function the current view is set as the place to run all tableView protocols, followed by the creation of a LectureID instance with that being encoded and then uploaded to the getLectures function
         super.viewDidLoad()
         
         self.tableView.delegate = self
@@ -124,7 +124,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func backButton(_ sender: Any) { //Button that takes the user back to the module upon being clicked
         DispatchQueue.main.async {
                 
             let story = UIStoryboard(name: "Main",bundle:nil)
