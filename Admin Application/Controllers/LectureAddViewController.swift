@@ -9,7 +9,7 @@ class LectureAddViewController: UIViewController { //Create the class, passing i
     var lec_id:String = ""
     var email: String = "" //These values are made to be assigned values from the previous view
     
-    func failed(error: String) { //Create a function for providing pop up errors
+    func popUp(error: String) { //Create a function for providing pop up errors
         DispatchQueue.main.async {
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -26,12 +26,12 @@ class LectureAddViewController: UIViewController { //Create the class, passing i
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in //This section of the code is used to create a URLSession and then uploads the data to the endpoint stated in the request
             if let error = error {
-                self.failed(error: "Error in app side (When creating lecture) Error: \(error)")
+                self.popUp(error: "Error in app side (When creating lecture) Error: \(error)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                self.failed(error: "Error in server side (When creating lecture)")
+                self.popUp(error: "Error in server side (When creating lecture)")
                 return
             }
             if let mimeType = response.mimeType,

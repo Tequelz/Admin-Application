@@ -20,7 +20,7 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
     var peripheralManager : CBPeripheralManager! //These three variables are used for creating the connection between the central device and peripherals
     
     
-    func failed(error: String) { //A function used to show error pop ups within the program
+    func popUp(error: String) { //A function used to show error pop ups within the program
         DispatchQueue.main.async {
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -80,7 +80,7 @@ class TransmitBTViewController: UIViewController,  CBPeripheralManagerDelegate {
     @IBAction func transmitButtonTapped(_ sender: UIButton) { //This button is pressed to start the transmisiion, with the first line retrieving data for use to advertise the beaconRegion as a beacon. After this the CBPeripheralManager is then initalised starting the transmission process within the application, once setup the user will then be showed a popup with the corresponding values
         beaconPeripheralData = beaconRegion .peripheralData(withMeasuredPower: nil)
             peripheralManager = CBPeripheralManager.init(delegate: self, queue: nil)
-        self.failed(error: "Managed to begin transmission with ID: \(self.email) and UUID: \(self.myUUID)")
+        self.popUp(error: "Managed to begin transmission with ID: \(self.email) and UUID: \(self.myUUID)")
     }
      
     override func didReceiveMemoryWarning() {

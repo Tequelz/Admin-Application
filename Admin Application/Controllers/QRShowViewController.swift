@@ -49,12 +49,13 @@ class QRShowViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBAction func emailButton(_ sender: Any) { //This function runs when the email button is clicked, it loads up the mail view controller setting values for all aspects of sending the email and attaches the QR code in a Data format. Once loaded the controller is then shown on the screen
         if MFMailComposeViewController.canSendMail(){
             let mail = MFMailComposeViewController()
+            print(self.email)
             mail.mailComposeDelegate = self
             mail.setToRecipients([self.email])
-            mail.setSubject("Lesson Code: "+self.code)
-            mail.setMessageBody("Here is the lesson code for "+self.code+" use attachment.", isHTML: false)
+            mail.setSubject("Lesson ID: "+self.lec_id)
+            mail.setMessageBody("Here is the lesson ID for "+self.lec_id+" use attachment.", isHTML: false)
             let imageData: NSData = imgQRCode.image!.pngData()! as NSData
-            mail.addAttachmentData(imageData as Data, mimeType: "qr/png", fileName: "File_"+self.code+"_QR.png")
+            mail.addAttachmentData(imageData as Data, mimeType: "qr/png", fileName: "File_"+self.lec_id+"_QR.png")
             self.present(mail,animated:true,completion: {() -> Void in})
         }
     }

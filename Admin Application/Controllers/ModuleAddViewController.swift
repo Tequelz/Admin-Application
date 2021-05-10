@@ -9,7 +9,7 @@ class ModuleAddViewController: UIViewController { //State that the class will be
     var email:String = ""// Key and email are used to take in data from the previous controller for the corresponding value
     var userID:Int = 0 //This value will be changed upon the retrieval of the current user's id
     
-    func failed(error: String) { //Create failed function for providing pop ups to the user
+    func popUp(error: String) { //Create popUp function for providing pop ups to the user
         DispatchQueue.main.async { //Set thread to main
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert) //Create alert controller
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default)) //Allow the controller to be clossed with a Dismiss button
@@ -36,13 +36,13 @@ class ModuleAddViewController: UIViewController { //State that the class will be
         let task = URLSession.shared.dataTask(with: request) { data, response, error in //Get some data using the request
             if let error = error { //If theres an error run
                 print ("error: \(error)")
-                self.failed(error: "Error in app side (When getting user details)")
+                self.popUp(error: "Error in app side (When getting user details)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else { //If HTTP request provides a status code out of range run this section
                 print ("server error")
-                self.failed(error: "Error in server side (When getting user details)")
+                self.popUp(error: "Error in server side (When getting user details)")
                 return
             }
             if let mimeType = response.mimeType,
@@ -63,12 +63,12 @@ class ModuleAddViewController: UIViewController { //State that the class will be
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in //This sends some data using the request made prior
             if let error = error {
-                self.failed(error: "Error in app side (When trying to create module) Error: \(error)")
+                self.popUp(error: "Error in app side (When trying to create module) Error: \(error)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                self.failed(error: "Error in server side (When trying to create module)")
+                self.popUp(error: "Error in server side (When trying to create module)")
                 return
             }
             if let mimeType = response.mimeType,

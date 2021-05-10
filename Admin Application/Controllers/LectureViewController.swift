@@ -10,7 +10,7 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
     var lectureNumberArray = [Int]() //Create two arrays for storing the lectures details
     var lectureLengthArray = [Int]()
     
-    func failed(error: String) { // Function that creates a pop up for the user if theres an error
+    func popUp(error: String) { // Function that creates a pop up for the user if theres an error
         DispatchQueue.main.async {
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -47,12 +47,12 @@ class LectureViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
             if let error = error {
-                self.failed(error: "Error in app side (When getting lectures) Error: \(error)")
+                self.popUp(error: "Error in app side (When getting lectures) Error: \(error)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                self.failed(error: "Server error in app side (When getting lectures)")
+                self.popUp(error: "Server error in app side (When getting lectures)")
                 return
             }
             if let mimeType = response.mimeType,

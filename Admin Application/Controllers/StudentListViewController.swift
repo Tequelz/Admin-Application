@@ -13,14 +13,6 @@ class StudentListViewController: UIViewController, UITableViewDataSource, UITabl
     var studentEmailArray = [String]()
     var studentIDArray = [Int]()
     
-    func failed(error: String) { //Function that is used to create pop ups for the user to see what has caused an error
-        DispatchQueue.main.async {
-            let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
-            self.present(ac,animated: true)
-        }
-    }
-    
     func getStudents(uploadData: Data){// Function that is used to obtain all the students from the API taking in some Data refering to the current lecture, if works correctly the primary key of the lecture is obtained with that anwser being converted to Data and then passed into the class attendance function
         let url = URL(string: "https://project-api-sc17gt.herokuapp.com/lecture-check/")!
         var request = URLRequest(url: url)

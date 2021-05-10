@@ -7,7 +7,7 @@ class LoginViewController: UIViewController { //This class is created for loggin
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField! //here the four text fields located on the log in view are connected to teh class for data transfer
     
-    func failed(error: String) { //a function that creates an alert popup for the user
+    func popUp(error: String) { //a function that creates an alert popup for the user
         DispatchQueue.main.async {
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -23,12 +23,12 @@ class LoginViewController: UIViewController { //This class is created for loggin
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
             if let error = error {
-                self.failed(error: "Error in app side (When getting logging in) Error: \(error)")
+                self.popUp(error: "Error in app side (When getting logging in) Error: \(error)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                self.failed(error: "Error in server side (When getting logging in)")
+                self.popUp(error: "Error in server side (When getting logging in)")
                 return
             }
             if let mimeType = response.mimeType,
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController { //This class is created for loggin
                         let story = UIStoryboard(name: "Main",bundle:nil)
                         let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
                             controller.key = authKey.key
-                            controller.email = self.email.text!
+                        controller.email = "georgeterpitsas1@gmail.com"
                             controller.modalPresentationStyle = .fullScreen
                             controller.modalTransitionStyle = .crossDissolve
                             self.present(controller, animated: true, completion: nil)
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController { //This class is created for loggin
         let user = "gterpitsas"
         let mail = "georgeterpitsas1@gmail.com"
         let pass = "teacher4@"
-        
+
         let login = Login(username: user, email : mail, password : pass)
         guard let uploadData = try? JSONEncoder().encode(login) else {
             return

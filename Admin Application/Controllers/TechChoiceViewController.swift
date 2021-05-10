@@ -32,6 +32,7 @@ class TechChoiceViewController: UIViewController { //Class that is used for the 
                 controller.key = self.key
                 controller.lec_id = self.lec_id
                 controller.email = self.email
+                print(self.email)
                 controller.modalPresentationStyle = .fullScreen
                 controller.modalTransitionStyle = .crossDissolve
                 self.present(controller, animated: true, completion: nil)
@@ -39,7 +40,7 @@ class TechChoiceViewController: UIViewController { //Class that is used for the 
     }
     
     
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func backButton(_ sender: Any) { //This function takes the user back to the previous view of Lecture
         DispatchQueue.main.async {
         
         let story = UIStoryboard(name: "Main",bundle:nil)

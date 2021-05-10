@@ -9,7 +9,7 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
     var moduleIDArray = [Int]() //Two arrays that store the information uploaded to the Module tableView
     var moduleNameArray = [String]()
     
-    func failed(error: String) { //Failed function that is run when any error occurs that the user should be aware of
+    func popUp(error: String) { //popUp function that is run when any error occurs that the user should be aware of
         DispatchQueue.main.async {
             let ac = UIAlertController(title:error, message: nil,preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -46,13 +46,13 @@ class ModuleViewController: UIViewController, UITableViewDataSource, UITableView
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                self.failed(error: "Error in app side (When creating module) Error: \(error)")
+                self.popUp(error: "Error in app side (When creating module) Error: \(error)")
                 return
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
                 print ("server error")
-                self.failed(error: "Error in server side (When creating module)")
+                self.popUp(error: "Error in server side (When creating module)")
                 return
             }
             if let mimeType = response.mimeType,
