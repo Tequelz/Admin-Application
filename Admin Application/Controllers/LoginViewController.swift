@@ -41,7 +41,7 @@ class LoginViewController: UIViewController { //This class is created for loggin
                         let story = UIStoryboard(name: "Main",bundle:nil)
                         let controller = story.instantiateViewController(identifier: "Module") as! ModuleViewController
                             controller.key = authKey.key
-                        controller.email = "georgeterpitsas1@gmail.com"
+                        controller.email = self.email.text!
                             controller.modalPresentationStyle = .fullScreen
                             controller.modalTransitionStyle = .crossDissolve
                             self.present(controller, animated: true, completion: nil)
@@ -57,15 +57,12 @@ class LoginViewController: UIViewController { //This class is created for loggin
     }
     
     @IBAction func loginButton(_ sender: Any) { // This function runs whenever the login button is pressed packaging all the data up and then sending it via the loginAPI function
-//        let user = username.text
-//        let mail = email.text
-//        let pass = password.text
+        let user = username.text!
+        let mail = email.text
+        let pass = password.text
                 
-        let user = "gterpitsas"
-        let mail = "georgeterpitsas1@gmail.com"
-        let pass = "teacher4@"
 
-        let login = Login(username: user, email : mail, password : pass)
+        let login = Login(username: user, email : mail!, password : pass!)
         guard let uploadData = try? JSONEncoder().encode(login) else {
             return
         }
